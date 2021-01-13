@@ -1,5 +1,10 @@
-Simulator
+T-RECS (Tool for RecSys Simulation)
 =========
+
+.. image:: https://i.imgur.com/3ZRDVaD.png
+  :width: 400
+  :alt: Picture of T-Rex next to letters T-RECS
+
 A simulator for sociotechnical systems. More details coming soon.
 
 Install
@@ -15,18 +20,18 @@ If you do not have Python 3.7+ installed, you can create a new environment with 
 
     conda create --name py37 python=3.7
 
-To ensure the example Jupyter notebooks run in your Python 3.7 environment, follow `the instructions from this blog post`_.
+To ensure the example Jupyter notebooks run in your Python 3.7 environment, follow `the instructions from this blog post`_. **Note**: you will also need ``pandas`` to run the example notebooks. As of December 2020, we recommend installing ``pandas v1.0.5`` using the command: ``pip install 'pandas==1.0.5'``. This will help avoid package conflicts between ``pandas`` and ``pylint`` if you also plan on contributing to ``trecs`` and running tests.
 
     .. _the instructions from this blog post: https://medium.com/@nrk25693/how-to-add-your-conda-environment-to-your-jupyter-notebook-in-just-4-steps-abeab8b8d084
 
-Currently, the simulator has only been tested extensively on MacOS 10.15.
+Currently, the simulator has only been tested extensively on MacOS 10.15 and Ubuntu 20.04.
 
-To install the simulator, you will need the Python package manager, pip. After activating your virtual environment, run the following commands in a terminal:
+To install the simulator, you will need the Python package manager, ``pip``. After activating your virtual environment, run the following commands in a terminal:
 
 ..  code-block:: bash
 
-  git clone https://github.com/elucherini/algo-segregation.git
-  cd algo-segregation
+  git clone https://github.com/elucherini/t-recs.git
+  cd t-recs
   pip install -e .
 
 
@@ -55,9 +60,9 @@ Example usage
 
 ..  code-block:: bash
 
-  import rec
+  import trecs
 
-  recsys = rec.models.ContentFiltering()
+  recsys = trecs.models.ContentFiltering()
   recsys.run(timesteps=10)
   measurements = recsys.get_measurements()
 
@@ -66,5 +71,13 @@ Documentation
 
 A first draft of the documentation is available `here`_. In its current version, the documentation can be used as a supplement to exploring details in the code. Currently, the tutorials in examples_ might be a more useful and centralized resource to learn how to use the system.
 
-.. _here: https://elucherini.github.io/algo-segregation/index.html
+.. _here: https://elucherini.github.io/t-recs/index.html
 .. _examples: examples/
+
+
+Contributing
+--------------
+
+Thanks for your interest in contributing! Check out the guidelines for contributors in `CONTRIBUTING.md`_. 
+
+.. _CONTRIBUTING.md: https://github.com/elucherini/t-recs/blob/main/CONTRIBUTING.md
