@@ -1,38 +1,42 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Metrics &mdash; Algo-segregation 0.1.0b documentation</title>
+  <title>Metrics &mdash; T-RECS 0.1.0b documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
   
 
   
   
-  
+
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Random Generators" href="random.html" />
@@ -50,7 +54,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> Algo-segregation
+            <a href="../index.html" class="icon icon-home"> T-RECS
           
 
           
@@ -73,6 +77,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -82,7 +87,7 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../readme.html">Simulator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">T-RECS (Tool for RecSys Simulation)</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="reference.html">Reference</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="components.html">Components</a></li>
 <li class="toctree-l2"><a class="reference internal" href="models.html">Models</a></li>
@@ -103,6 +108,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -112,7 +118,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Algo-segregation</a>
+          <a href="../index.html">T-RECS</a>
         
       </nav>
 
@@ -137,11 +143,13 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="reference.html">Reference</a> &raquo;</li>
         
@@ -150,7 +158,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/reference/metrics.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -172,13 +180,13 @@
 <h2>Interaction Measurement<a class="headerlink" href="#interaction-measurement" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="metrics.measurement.InteractionMeasurement">
-<em class="property">class </em><code class="sig-prename descclassname">metrics.measurement.</code><code class="sig-name descname">InteractionMeasurement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metrics/measurement.html#InteractionMeasurement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metrics.measurement.InteractionMeasurement" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">metrics.measurement.</code><code class="sig-name descname">InteractionMeasurement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">'interaction_histogram'</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metrics/measurement.html#InteractionMeasurement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metrics.measurement.InteractionMeasurement" title="Permalink to this definition">¶</a></dt>
 <dd><p>Keeps track of the interactions between users and items.</p>
 <p>Specifically, at each timestep, it stores a histogram of length <cite>|I|</cite>, where
 element <cite>i</cite> is the number of interactions received by item <cite>i</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>verbose</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em> (</em><em>optional</em><em>, </em><em>default: False</em><em>)</em>) – If True, enables verbose mode. Disabled by default.</p>
+<dd class="field-odd"><p><strong>verbose</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a><em> (</em><em>optional</em><em>, </em><em>default: False</em><em>)</em>) – If True, enables verbose mode. Disabled by default.</p>
 </dd>
 </dl>
 <dl class="py attribute">
@@ -197,24 +205,24 @@ element <cite>i</cite> is the number of interactions received by item <cite>i</c
 <dd><p>Name of the measurement component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a> (optional, default: “interaction_histogram”)</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metrics.measurement.InteractionMeasurement.measure">
-<code class="sig-name descname">measure</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">step</span></em>, <em class="sig-param"><span class="n">interactions</span></em>, <em class="sig-param"><span class="n">recommender</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metrics/measurement.html#InteractionMeasurement.measure"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metrics.measurement.InteractionMeasurement.measure" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">measure</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">recommender</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metrics/measurement.html#InteractionMeasurement.measure"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metrics.measurement.InteractionMeasurement.measure" title="Permalink to this definition">¶</a></dt>
 <dd><p>Measures and stores a histogram of the number of interactions per
 item at the given timestep.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>step</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – Current time step</p></li>
-<li><p><strong>interactions</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.array</span></code>) – Non-aggregated array of interactions – that is, an array of
-length <cite>|U|</cite> s.t. element <cite>u</cite> is the index of the item with
-which user <cite>u</cite> interacted.</p></li>
 <li><p><strong>recommender</strong> (<a class="reference internal" href="models.html#models.recommender.BaseRecommender" title="models.recommender.BaseRecommender"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseRecommender</span></code></a>) – Model that inherits from <a class="reference internal" href="models.html#models.recommender.BaseRecommender" title="models.recommender.BaseRecommender"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseRecommender</span></code></a>.</p></li>
+<li><p><strong>**kwargs</strong> – Keyword arguments, one of which must be <cite>interactions</cite>.
+<cite>interactions</cite> is a non-aggregated array of interactions –
+that is, an array of length <cite>|U|</cite> s.t. element <cite>u</cite> is the index
+of the item with which user <cite>u</cite> interacted.</p></li>
 </ul>
 </dd>
 </dl>
@@ -234,7 +242,7 @@ among many items or only a few items.</p>
 <p>This class inherits from <a class="reference internal" href="#metrics.measurement.InteractionMeasurement" title="metrics.measurement.InteractionMeasurement"><code class="xref py py-class docutils literal notranslate"><span class="pre">InteractionMeasurement</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>verbose</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em> (</em><em>optional</em><em>, </em><em>default: False</em><em>)</em>) – If True, enables verbose mode. Disabled by default.</p>
+<dd class="field-odd"><p><strong>verbose</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a><em> (</em><em>optional</em><em>, </em><em>default: False</em><em>)</em>) – If True, enables verbose mode. Disabled by default.</p>
 </dd>
 </dl>
 <dl class="py attribute">
@@ -253,7 +261,7 @@ among many items or only a few items.</p>
 <dd><p>Name of the measurement component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a> (optional, default: “homogeneity”)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -264,25 +272,25 @@ among many items or only a few items.</p>
 <dd><p>A copy of the histogram at the previous timestep.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)">None</a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)">list</a>, array_like</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a>, array_like</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metrics.measurement.HomogeneityMeasurement.measure">
-<code class="sig-name descname">measure</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">step</span></em>, <em class="sig-param"><span class="n">interactions</span></em>, <em class="sig-param"><span class="n">recommender</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metrics/measurement.html#HomogeneityMeasurement.measure"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metrics.measurement.HomogeneityMeasurement.measure" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">measure</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">recommender</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metrics/measurement.html#HomogeneityMeasurement.measure"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metrics.measurement.HomogeneityMeasurement.measure" title="Permalink to this definition">¶</a></dt>
 <dd><p>Measures the homogeneity of user interactions – that is, whether
 interactions are spread among many items or only a few items.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>step</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – Current time step</p></li>
-<li><p><strong>interactions</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.array</span></code>) – Non-aggregated array of interactions – that is, an array of
-length <cite>|U|</cite> s.t. element <cite>u</cite> is the index of the item with
-which user <cite>u</cite> interacted.</p></li>
 <li><p><strong>recommender</strong> (<a class="reference internal" href="models.html#models.recommender.BaseRecommender" title="models.recommender.BaseRecommender"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseRecommender</span></code></a>) – Model that inherits from
 <a class="reference internal" href="models.html#models.recommender.BaseRecommender" title="models.recommender.BaseRecommender"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseRecommender</span></code></a>.</p></li>
+<li><p><strong>**kwargs</strong> – Keyword arguments, one of which must be <cite>interactions</cite>.
+<cite>interactions</cite> is a non-aggregated array of interactions –
+that is, an array of length <cite>|U|</cite> s.t. element <cite>u</cite> is the index
+of the item with which user <cite>u</cite> interacted.</p></li>
 </ul>
 </dd>
 </dl>
@@ -301,7 +309,7 @@ which user <cite>u</cite> interacted.</p></li>
 <p>This class inherits from <a class="reference internal" href="#metrics.measurement.Measurement" title="metrics.measurement.Measurement"><code class="xref py py-class docutils literal notranslate"><span class="pre">Measurement</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>verbose</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em> (</em><em>optional</em><em>, </em><em>default: False</em><em>)</em>) – If True, enables verbose mode. Disabled by default.</p>
+<dd class="field-odd"><p><strong>verbose</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a><em> (</em><em>optional</em><em>, </em><em>default: False</em><em>)</em>) – If True, enables verbose mode. Disabled by default.</p>
 </dd>
 </dl>
 <dl class="py attribute">
@@ -320,24 +328,24 @@ which user <cite>u</cite> interacted.</p></li>
 <dd><p>Name of the measurement component.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a> (optional, default: “mse”)</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metrics.measurement.MSEMeasurement.measure">
-<code class="sig-name descname">measure</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">step</span></em>, <em class="sig-param"><span class="n">interactions</span></em>, <em class="sig-param"><span class="n">recommender</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metrics/measurement.html#MSEMeasurement.measure"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metrics.measurement.MSEMeasurement.measure" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">measure</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">recommender</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metrics/measurement.html#MSEMeasurement.measure"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metrics.measurement.MSEMeasurement.measure" title="Permalink to this definition">¶</a></dt>
 <dd><p>Measures and records the mean squared error between the user preferences
 predicted by the system and the users’ actual preferences.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>step</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – Current time step</p></li>
-<li><p><strong>interactions</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.array</span></code>) – Non-aggregated array of interactions – that is, an array of
-length <cite>|U|</cite> s.t. element <cite>u</cite> is the index of the item with
-which user <cite>u</cite> interacted.</p></li>
 <li><p><strong>recommender</strong> (<a class="reference internal" href="models.html#models.recommender.BaseRecommender" title="models.recommender.BaseRecommender"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseRecommender</span></code></a>) – Model that inherits from <a class="reference internal" href="models.html#models.recommender.BaseRecommender" title="models.recommender.BaseRecommender"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseRecommender</span></code></a>.</p></li>
+<li><p><strong>**kwargs</strong> – Keyword arguments, one of which must be <cite>interactions</cite>.
+<cite>interactions</cite> is a non-aggregated array of interactions –
+that is, an array of length <cite>|U|</cite> s.t. element <cite>u</cite> is the index
+of the item with which user <cite>u</cite> interacted.</p></li>
 </ul>
 </dd>
 </dl>
@@ -364,7 +372,7 @@ Networkx’s <a class="reference external" href="https://networkx.github.io/docu
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>infection_state</strong> (<em>array_like</em>) – The initial “infection state”</p></li>
-<li><p><strong>verbose</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em> (</em><em>optional</em><em>, </em><em>default: False</em><em>)</em>) – If True, enables verbose mode. Disabled by default.</p></li>
+<li><p><strong>verbose</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a><em> (</em><em>optional</em><em>, </em><em>default: False</em><em>)</em>) – If True, enables verbose mode. Disabled by default.</p></li>
 </ul>
 </dd>
 </dl>
@@ -388,7 +396,7 @@ in this case, the metric stored in
 the <a class="reference internal" href="#metrics.measurement.DiffusionTreeMeasurement.diffusion_tree" title="metrics.measurement.DiffusionTreeMeasurement.diffusion_tree"><code class="xref py py-attr docutils literal notranslate"><span class="pre">diffusion_tree</span></code></a> data structure.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a> (optional, default: “num_infected”)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -423,7 +431,7 @@ the <a class="reference internal" href="#metrics.measurement.DiffusionTreeMeasur
 
 <dl class="py method">
 <dt id="metrics.measurement.DiffusionTreeMeasurement.measure">
-<code class="sig-name descname">measure</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">step</span></em>, <em class="sig-param"><span class="n">interactions</span></em>, <em class="sig-param"><span class="n">recommender</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metrics/measurement.html#DiffusionTreeMeasurement.measure"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metrics.measurement.DiffusionTreeMeasurement.measure" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">measure</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">recommender</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metrics/measurement.html#DiffusionTreeMeasurement.measure"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metrics.measurement.DiffusionTreeMeasurement.measure" title="Permalink to this definition">¶</a></dt>
 <dd><p>Updates tree with new infections and stores information about new
 infections. In <a class="reference internal" href="#metrics.measurement.Measurement.measurement_history" title="metrics.measurement.Measurement.measurement_history"><code class="xref py py-attr docutils literal notranslate"><span class="pre">measurement_history</span></code></a>, it stores the
 total number of infected users in the system – that is, the number of
@@ -431,11 +439,11 @@ nodes in the tree.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>step</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – Current time step</p></li>
-<li><p><strong>interactions</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.array</span></code>) – Non-aggregated array of interactions – that is, an array of
-length <cite>|U|</cite> s.t. element <cite>u</cite> is the index of the item with
-which user <cite>u</cite> interacted.</p></li>
 <li><p><strong>recommender</strong> (<a class="reference internal" href="models.html#models.recommender.BaseRecommender" title="models.recommender.BaseRecommender"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseRecommender</span></code></a>) – Model that inherits from <a class="reference internal" href="models.html#models.recommender.BaseRecommender" title="models.recommender.BaseRecommender"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseRecommender</span></code></a>.</p></li>
+<li><p><strong>**kwargs</strong> – Keyword arguments, one of which must be <cite>interactions</cite>.
+<cite>interactions</cite> is a non-aggregated array of interactions –
+that is, an array of length <cite>|U|</cite> s.t. element <cite>u</cite> is the index
+of the item with which user <cite>u</cite> interacted.</p></li>
 </ul>
 </dd>
 </dl>
@@ -467,7 +475,7 @@ structural virality developed by Goel, Anderson, Hofman, and Watts in
 <dd class="field-odd"><p><strong>Structural virality</strong></p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)">float</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -479,13 +487,13 @@ structural virality developed by Goel, Anderson, Hofman, and Watts in
 <h2>Measurement: base class<a class="headerlink" href="#measurement-base-class" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="metrics.measurement.Measurement">
-<em class="property">class </em><code class="sig-prename descclassname">metrics.measurement.</code><code class="sig-name descname">Measurement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">init_value</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metrics/measurement.html#Measurement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metrics.measurement.Measurement" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">metrics.measurement.</code><code class="sig-name descname">Measurement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">init_value</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metrics/measurement.html#Measurement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metrics.measurement.Measurement" title="Permalink to this definition">¶</a></dt>
 <dd><p>Abstract observable class to store measurements.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>verbose</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em> (</em><em>optional</em><em>, </em><em>default: False</em><em>)</em>) – If True, enables verbose mode. Disabled by default.</p></li>
-<li><p><strong>init_value</strong> (<em>array_like</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a><em> (</em><em>optional</em><em>, </em><em>default: None</em><em>)</em>) – The value of the metric before the start of the simulation.</p></li>
+<li><p><strong>verbose</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a><em> (</em><em>optional</em><em>, </em><em>default: False</em><em>)</em>) – If True, enables verbose mode. Disabled by default.</p></li>
+<li><p><strong>init_value</strong> (<em>array_like</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><em>None</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em> (</em><em>optional</em><em>, </em><em>default: None</em><em>)</em>) – The value of the metric before the start of the simulation.</p></li>
 </ul>
 </dd>
 </dl>
@@ -495,7 +503,18 @@ structural virality developed by Goel, Anderson, Hofman, and Watts in
 <dd><p>List of measurements. A new element is added at each timestep.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)">list</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="metrics.measurement.Measurement.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#metrics.measurement.Measurement.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of the measurement quantity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -504,14 +523,14 @@ structural virality developed by Goel, Anderson, Hofman, and Watts in
 <dt id="metrics.measurement.Measurement.get_measurement">
 <code class="sig-name descname">get_measurement</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metrics/measurement.html#Measurement.get_measurement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metrics.measurement.Measurement.get_measurement" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns measurements. See
-<code class="xref py py-func docutils literal notranslate"><span class="pre">get_observable()</span></code>
+<a class="reference internal" href="components.html#components.base_components.BaseObservable.get_observable" title="components.base_components.BaseObservable.get_observable"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_observable()</span></code></a>
 for more details.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><strong>Measurements</strong></p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)">dict</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)">dict</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -526,9 +545,16 @@ number of timesteps that the system has been measuring).</p>
 <dd class="field-odd"><p><strong>Length of measurement_history</strong></p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)">int</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a></p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="metrics.measurement.Measurement.measure">
+<em class="property">abstract </em><code class="sig-name descname">measure</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">recommender</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metrics/measurement.html#Measurement.measure"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metrics.measurement.Measurement.measure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that should calculate some outcome of interest of the system
+at the current timestep</p>
 </dd></dl>
 
 <dl class="py method">
@@ -539,8 +565,8 @@ consistency when storing different measurements.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>observation</strong> (<em>array_like</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a>) – Element that will be stored</p></li>
-<li><p><strong>copy</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em> (</em><em>optional</em><em>, </em><em>default: True</em><em>)</em>) – If True, the function stores a copy of observation. Useful for
+<li><p><strong>observation</strong> (<em>array_like</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><em>None</em></a>) – Element that will be stored</p></li>
+<li><p><strong>copy</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a><em> (</em><em>optional</em><em>, </em><em>default: True</em><em>)</em>) – If True, the function stores a copy of observation. Useful for
 <code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>.</p></li>
 </ul>
 </dd>
@@ -557,29 +583,29 @@ consistency when storing different measurements.</p>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="random.html" class="btn btn-neutral float-right" title="Random Generators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="models.html" class="btn btn-neutral float-left" title="Models" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="random.html" class="btn btn-neutral float-right" title="Random Generators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="models.html" class="btn btn-neutral float-left" title="Models" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, Elena Lucherini
+        &#169; Copyright 2020, Elena Lucherini.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -587,7 +613,6 @@ consistency when storing different measurements.</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
